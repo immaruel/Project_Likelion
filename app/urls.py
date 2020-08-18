@@ -12,10 +12,15 @@ urlpatterns = [
     path('logout/', views.logoutUser, name="logout"),
     path('user/', views.userPage, name="user"),
     path('adminpage/', views.adminDashboard, name="adminpage"),
-    path('book/', views.bookFind, name="book"),
     path('create/', views.createOrder, name="create"),
     path('delete/<int:pk>', views.deleteOrder, name="delete"),
     path('update/<int:pk>', views.updateOrder, name="update"),
+    path('book/', views.bookPhoto, name="book"),
+    path('book/', views.bookTitle, name="book"),
+    path('book/', views.bookWriter, name="book"),
+    path('book/', views.bookPublisher, name="book"),
+
+
 
 
     

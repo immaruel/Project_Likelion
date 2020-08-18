@@ -14,7 +14,7 @@ from django.contrib.auth.models import Group
 from .filters import OrderFilter
 
 
-from .crawling import get_food
+from .crawling import book_photo, book_publisher, book_title, book_writer
 
 # Create your views here.
 def home(request):
@@ -158,7 +158,22 @@ def deleteOrder(request, pk):
     return render(request, 'app/delete.html',context)
 
 
-def bookFind(request):
-    #food = get_food()
-    return render(request)
+def bookPhoto(request):
+    #food = get_food(1,3)
+    photo = book_photo(1,2)
+    return render(request,'app/book.html',{'photo':photo})
 
+def bookTitle(request):
+    #food = get_food(1,3)
+    title = book_title(1,2)
+    return render(request,'app/book.html',{'title':title})
+
+def bookWriter(request):
+    #food = get_food(1,3)
+    writer = book_writer(1,2)
+    return render(request,'app/book.html',{'writer':writer})
+
+def bookPublisher(request):
+    #food = get_food(1,3)
+    publisher = book_publisher(1,2)
+    return render(request,'app/book.html',{'publisher':publisher})
